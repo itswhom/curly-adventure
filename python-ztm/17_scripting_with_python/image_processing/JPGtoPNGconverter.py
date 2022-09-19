@@ -1,3 +1,4 @@
+from distutils.command.clean import clean
 from lib2to3.pytree import convert
 from PIL import Image
 import sys
@@ -18,6 +19,7 @@ if not os.path.exists(destination_dir):
 # loop through pokedex/
 for mon in os.listdir(source_dir):
     source_image = Image.open(source_dir + mon)
+    clean_name = os.path.splitext(mon)[0]
     # save to new folder as png
-    source_image.save(destination_dir + mon, 'png')
+    source_image.save(destination_dir + clean_name + '.png', 'png')
     
