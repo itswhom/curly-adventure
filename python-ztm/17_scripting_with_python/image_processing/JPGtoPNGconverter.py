@@ -18,7 +18,6 @@ if not os.path.exists(destination_dir):
 # loop through pokedex/
 for mon in os.listdir(source_dir):
     source_image = Image.open(source_dir + mon)
-    stem = pathlib.Path(mon).stem
     # save to new folder as png
-    source_image.save(destination_dir + stem + '.png')
+    source_image.save(destination_dir + mon, 'png')
     
