@@ -1,0 +1,61 @@
+* {
+    text-align: right;
+}
+
+body {
+    background-image: url(backgroundimage.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+h2 {
+    color: #BBA8B5;
+    text-align: center;
+    border: 5px dashed rgba(172, 105, 150, 0.5);
+    cursor: pointer;
+}
+
+img {
+    float: right;
+}
+
+footer {
+    clear: both;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+p {
+    color: pink;
+    text-transform: uppercase;
+    line-height: 29px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 250%;
+    font-family: 'Josefin Slab', serif;
+}
+
+.boxmodel {
+    border: 5px solid red;
+    display: inline-block;
+    padding: 5px 20px;
+    color: white;
+    margin: 0px 20px;
+}
+.webtext {
+    border: 5px dashed green;
+}
+
+.active {
+    color: red;
+}
+
+#div1 {
+    background-color: rgba(0,0,255,0.1);
+}
+
+#div2 {
+    background: rgba(255,0,0,0.2);
+}
