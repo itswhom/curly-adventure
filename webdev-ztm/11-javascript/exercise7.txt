@@ -1,0 +1,69 @@
+// Create an object and an array which we will use in our facebook exercise.
+
+// 1. Create an object that has properties "username" and "password". Fill those values in with strings.
+// var user = {
+//     username: "my_name3",
+//     password: "hunter2",
+// },
+
+
+// 2. Create an array which contains the object you have made above and name the array "database".
+var database = [
+    {
+        username: "my_name3",
+        password: "hunter2",
+    },
+    {
+        username: "sally",
+        password: "nunnery",
+    },
+    {
+        username: "mitch",
+        password: "777",
+    }
+];
+// 3. Create an array called "newsfeed" which contains 3 objects with properties "username" and "timeline".
+var newsfeed = [
+    {
+        username: "somedude",
+        timeline: "Learning is cool."
+    },
+    {
+        username: "mygal42",
+        timeline: "Been coding for two days straight!"
+    },
+    {
+        username: "my_name3",
+        timeline: "Hey I'm new here!"
+    }
+];
+
+var userNamePrompt = prompt("What's your username?");
+var passwordPrompt = prompt("What's your password?");
+
+function isUserValid(username, password) {
+    for (var i=0; i < database.length; i++) {
+        if(database[i].username === username &&
+            database[i].password === password) {
+                return true;
+            }
+        }
+        return false;
+}
+
+function signIn(user, pass) {
+    if (isUserValid(user, pass)) {
+        console.log(newsfeed);
+    } else {
+        console.log("Sorry, wrong username or password.");
+    }
+}
+
+// First sign in function
+// function signIn(user, pass) {
+//     if (user === database[0].username && pass === database[0].password) {
+//         console.log(newsfeed);
+//     } else {
+//         console.log("Sorry, wrong username or password.");
+//     }
+// }
