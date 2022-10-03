@@ -30,7 +30,14 @@ Accessing the DOM elements are done using `document` object.
  * parentElement
  * children
 
-## It is important to CACHE selectors in variables
+**It is important to CACHE selectors in variables**
+
+## Callback Functions
+When adding event listeners, do not use the `()` after the function name, because we are not trying to run the function yet. Example:
+``` js
+button.addEventListener("click", addListAfterClick);
+input.addEventListener("keypress", addListAfterKeypress);
+```
 
 ## Misc Links
 
