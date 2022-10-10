@@ -48,9 +48,9 @@ alert("First handler");
 function handler2() {
 alert("Second handler");
 }
-first.addEventListener("click", handler1);
+first.addEventListener("click", handler1); // event listeners
 first.addEventListener("click", handler2);
-second.onclick = handler1;
+second.onclick = handler1; // event handlers
 second.onclick = handler2;
 ```
 
@@ -61,3 +61,47 @@ HTML:
 ```
 
 Clicking *“First Element”* will trigger 2 alerts. Clicking on *“Second Element”* will trigger only the second alert! **With addEventListener, you can attach multiple events to the same element, but not with onclick.**
+
+## Prevent Default Event Behavior
+
+(from mmtuts)
+
+Preventing default behavior, for example, clicking an `<a>` tag that links to "#" will reload the page, so we may want to disable that action.
+
+``` js
+let btn = document.querySelector(".test-btn"); // button at bottom linked to #
+let form = document.querySelector(".test-form"); // form submit button
+
+function changeBtnText(e) {// capture relevant object's events in var e
+        e.preventDefault();// prevents default behavior contained in e
+        btn.innerHTML = "YAY";
+}
+
+function stopFormSubmit(e) {
+        e.preventDefault();// prevent form from being submitted
+}
+
+btn.onclick = changeBtnText;
+form.onclick = stopFormSubmit;
+```
+
+## Anonymous Functions in EventListeners
+
+ * If you are using a one-time function when a listener event occurs
+ * If you need to call a function on a listener event, and need to pass in parameters
+
+``` js
+let btn = document.querySelector(".testBtn");
+
+function firstFunction(e, name) {
+        e.preventDefault();
+        btn.innerHTML = name;
+}
+
+btn.addEventListener("click", function(e) { // passing parameters via listener
+        firstFunction(e, "Daniel");
+});
+btn.addEventListener("click", function() { // multiple listeners can exist
+        btn.style.backgroundColor = "yellow";
+});
+```
